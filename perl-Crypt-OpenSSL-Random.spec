@@ -14,7 +14,6 @@ Source:		http://www.cpan.org/modules/by-module/Crypt/%{module}-%{version}.tar.gz
 Requires:	openssl
 Buildrequires: perl-devel
 Buildrequires: openssl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Crypt-OpenSSL-Random module for perl
