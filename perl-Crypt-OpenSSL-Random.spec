@@ -1,7 +1,7 @@
 %define name	perl-Crypt-OpenSSL-Random
 %define module  Crypt-OpenSSL-Random
 %define version	0.04
-%define release %mkrel 2
+%define release %mkrel 3
 
 Name:		%{name}
 Version:	%{version}
