@@ -3,8 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 6
-
+Release:    7
 Summary:	Crypt-OpenSSL-Random module for perl 
 License:	GPL+ or Artistic
 Group:		Development/Perl
@@ -13,8 +12,6 @@ Source0:	http://www.cpan.org/modules/by-module/Crypt/%{upstream_name}-%{upstream
 Patch0:		Crypt-OpenSSL-Random-0.04-link.patch
 Buildrequires: perl-devel
 Buildrequires: openssl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
-Requires:	openssl
 
 %description
 Crypt-OpenSSL-Random module for perl
@@ -37,13 +34,10 @@ find . -type f | xargs %{__perl} -p -i -e "s|^#\!/usr/local/bin/perl|#\!/usr/bin
 
 %makeinstall_std
 
-%clean 
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot} 
-
 %files
-%defattr(-,root,root)
 %doc Changes 
 %{perl_vendorlib}/*/auto/Crypt/OpenSSL/Random/Random.so
 %{perl_vendorlib}/*/auto/Crypt/OpenSSL/Random/autosplit.ix
 %{perl_vendorlib}/*/Crypt/OpenSSL/Random.pm
 %{_mandir}/*/*
+
