@@ -1,2 +1,4 @@
+removed_sources:
+  Crypt-OpenSSL-Random-0.04.tar.gz: 641375f49f715dccb5ea064160ff11978be877ac
 sources:
-  "Crypt-OpenSSL-Random-0.04.tar.gz": 641375f49f715dccb5ea064160ff11978be877ac
+  Crypt-OpenSSL-Random-0.10.tar.gz: e2626a58545c076bddf4b5e6d607f5bd82a5377b
