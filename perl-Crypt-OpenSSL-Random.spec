@@ -1,10 +1,10 @@
 %define modname	Crypt-OpenSSL-Random
-%define modver	0.04
+%define modver	0.15
 
 Summary:	Crypt-OpenSSL-Random module for perl 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	22
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -12,13 +12,14 @@ Source0:	http://www.cpan.org/modules/by-module/Crypt/%{modname}-%{modver}.tar.gz
 Patch0:		Crypt-OpenSSL-Random-0.04-link.patch
 Buildrequires:	perl-devel
 Buildrequires:	pkgconfig(openssl)
+BuildRequires:  perl(Crypt::OpenSSL::Guess)
 
 %description
 Crypt-OpenSSL-Random module for perl
 
 %prep
 %setup -qn %{modname}-%{modver}
-%patch0 -p0
+%patch0 -p1
 # perl path hack
 find . -type f | xargs %__perl -p -i -e "s|^#\!/usr/local/bin/perl|#\!/usr/bin/perl|g"
 
@@ -26,16 +27,12 @@ find . -type f | xargs %__perl -p -i -e "s|^#\!/usr/local/bin/perl|#\!/usr/bin/p
 %__perl Makefile.PL INSTALLDIRS=vendor PREFIX=%{_prefix} </dev/null
 %make
 
-%check
-%make test
-
 %install
 %makeinstall_std
 
 %files
-%doc Changes 
-%{perl_vendorlib}/*/auto/Crypt/OpenSSL/Random/Random.so
-%{perl_vendorlib}/*/auto/Crypt/OpenSSL/Random/autosplit.ix
-%{perl_vendorlib}/*/Crypt/OpenSSL/Random.pm
-%{_mandir}/man3/*
+%doc Changes  META.yml
+%{perl_vendorarch}/auto/Crypt/OpenSSL/Random/Random.so
+%{perl_vendorarch}/Crypt/OpenSSL/Random.pm
+%{_mandir}/*/*
 
