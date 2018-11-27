@@ -18,7 +18,7 @@ Crypt-OpenSSL-Random module for perl
 
 %prep
 %setup -qn %{modname}-%{modver}
-%patch0 -p0
+%patch0 -p1
 # perl path hack
 find . -type f | xargs %__perl -p -i -e "s|^#\!/usr/local/bin/perl|#\!/usr/bin/perl|g"
 
