@@ -27,9 +27,6 @@ find . -type f | xargs %__perl -p -i -e "s|^#\!/usr/local/bin/perl|#\!/usr/bin/p
 %__perl Makefile.PL INSTALLDIRS=vendor PREFIX=%{_prefix} </dev/null
 %make
 
-%check
-%make test
-
 %install
 %makeinstall_std
 
