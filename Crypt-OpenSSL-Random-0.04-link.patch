@@ -1,11 +1,11 @@
---- Makefile.PL.link	2010-04-07 07:20:46.000000000 +0200
-+++ Makefile.PL	2010-04-07 07:21:09.000000000 +0200
-@@ -5,7 +5,7 @@
-     'NAME'		=> 'Crypt::OpenSSL::Random',
-     'VERSION_FROM'	=> 'Random.pm', # finds $VERSION
-     'PREREQ_PM'		=> {}, # e.g., Module::Name => 1.1
--    'LIBS'	        => ['-lssl -lcrypto'],   # e.g., '-lm' 
-+    'LIBS'	        => ['-lcrypto'],   # e.g., '-lm' 
-     'DEFINE'		=> '', # e.g., '-DHAVE_SOMETHING'
-     'INC'		=> '', # e.g., '-I/usr/include/other'
- );
+--- Crypt-OpenSSL-Random-0.10/Makefile.PL.orig	2015-06-23 17:49:07.504307935 +0300
++++ Crypt-OpenSSL-Random-0.10/Makefile.PL	2015-06-23 17:50:43.496434861 +0300
+@@ -10,7 +10,7 @@
+ if ($args =~ /LIBDIR[ =](\S+)/) {
+   $libdir = $1;
+ }
+-my $libs = "-lssl -lcrypto";
++my $libs = "-lcrypto";
+ 
+ WriteMakefile(
+   'NAME'	    => 'Crypt::OpenSSL::Random',
