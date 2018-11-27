@@ -31,9 +31,8 @@ find . -type f | xargs %__perl -p -i -e "s|^#\!/usr/local/bin/perl|#\!/usr/bin/p
 %makeinstall_std
 
 %files
-%doc Changes 
-%{perl_vendorlib}/*/auto/Crypt/OpenSSL/Random/Random.so
-%{perl_vendorlib}/*/auto/Crypt/OpenSSL/Random/autosplit.ix
-%{perl_vendorlib}/*/Crypt/OpenSSL/Random.pm
-%{_mandir}/man3/*
+%doc Changes  META.yml
+%{perl_vendorarch}/auto/Crypt/OpenSSL/Random/Random.so
+%{perl_vendorarch}/Crypt/OpenSSL/Random.pm
+%{_mandir}/*/*
 
