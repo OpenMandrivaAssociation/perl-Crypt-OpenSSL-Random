@@ -12,6 +12,7 @@ Source0:	http://www.cpan.org/modules/by-module/Crypt/%{modname}-%{modver}.tar.gz
 Patch0:		Crypt-OpenSSL-Random-0.04-link.patch
 Buildrequires:	perl-devel
 Buildrequires:	pkgconfig(openssl)
+BuildRequires:  perl(Crypt::OpenSSL::Guess)
 
 %description
 Crypt-OpenSSL-Random module for perl
