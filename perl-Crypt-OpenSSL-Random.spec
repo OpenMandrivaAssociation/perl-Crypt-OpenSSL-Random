@@ -4,7 +4,7 @@
 Summary:	Crypt-OpenSSL-Random module for perl 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	1
+Release:	2
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -25,10 +25,10 @@ find . -type f | xargs %__perl -p -i -e "s|^#\!/usr/local/bin/perl|#\!/usr/bin/p
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor PREFIX=%{_prefix} </dev/null
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc Changes  META.yml
