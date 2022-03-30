@@ -1,5 +1,8 @@
-%define modname	Crypt-OpenSSL-Random
-%define modver	0.15
+# Work around incomplete debug packages
+%global _empty_manifest_terminate_build 0
+
+%define modname Crypt-OpenSSL-Random
+%define modver 0.15
 
 Summary:	Crypt-OpenSSL-Random module for perl 
 Name:		perl-%{modname}
@@ -18,11 +21,10 @@ BuildRequires:  perl(Crypt::OpenSSL::Guess)
 Crypt-OpenSSL-Random module for perl.
 
 %prep
-%setup -qn %{modname}-%{modver}
-%patch0 -p1
+%autosetup -n %{modname}-%{modver} -p1
 
 # perl path hack
-find . -type f | xargs %__perl -p -i -e "s|^#\!/usr/local/bin/perl|#\!/usr/bin/perl|g"
+find . -type f | xargs perl -p -i -e "s|^#\!/usr/local/bin/perl|#\!/usr/bin/perl|g"
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor PREFIX=%{_prefix} </dev/null
@@ -35,4 +37,4 @@ perl Makefile.PL INSTALLDIRS=vendor PREFIX=%{_prefix} </dev/null
 %doc Changes  META.yml
 %{perl_vendorarch}/auto/Crypt/OpenSSL/Random/Random.so
 %{perl_vendorarch}/Crypt/OpenSSL/Random.pm
-%{_mandir}/*/*
+%doc %{_mandir}/*/*
