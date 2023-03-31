@@ -7,7 +7,7 @@
 Summary:	Crypt-OpenSSL-Random module for perl 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	5
+Release:	6
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
