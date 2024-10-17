@@ -10,7 +10,7 @@ Version:	%perl_convert_version %{modver}
 Release:	7
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{modname}
+Url:		https://search.cpan.org/dist/%{modname}
 Source0:	http://www.cpan.org/modules/by-module/Crypt/%{modname}-%{modver}.tar.gz
 Patch0:		Crypt-OpenSSL-Random-0.04-link.patch
 BuildRequires:	perl-devel
