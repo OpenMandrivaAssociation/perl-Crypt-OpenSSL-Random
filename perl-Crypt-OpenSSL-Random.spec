@@ -13,6 +13,7 @@ Group:		Development/Perl
 Url:		https://search.cpan.org/dist/%{modname}
 Source0:	http://www.cpan.org/modules/by-module/Crypt/%{modname}-%{modver}.tar.gz
 Patch0:		Crypt-OpenSSL-Random-0.04-link.patch
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:  perl(Crypt::OpenSSL::Guess)
